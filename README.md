@@ -601,6 +601,10 @@ I include a screenshot of the application running through the public address of 
 <img width="563" height="53" alt="Cap42 a m" src="https://github.com/user-attachments/assets/7c4a61cb-84bd-4eb2-8c1c-8467ea6ae51e" />
 
 
+<img width="512" height="42" alt="Capturala(s) 2 16 33 a m" src="https://github.com/user-attachments/assets/816e8fd4-fbc2-44e8-bf3b-3d262b07ce4f" />
+
+
+
 <img width="1246" height="774" alt="Capla(s) 2 12 35 a m" src="https://github.com/user-attachments/assets/c91b2861-fa9e-4517-a0a4-3d004e327054" />
 
 <img width="865" height="779" alt="Capa la(s) 2 13 32 a m" src="https://github.com/user-attachments/assets/e1668c49-fa58-40a0-9e6b-0a047dc1090d" />
