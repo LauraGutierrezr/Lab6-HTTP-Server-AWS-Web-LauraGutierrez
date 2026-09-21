@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.lauragutierrez.lab6</groupId>
+  <artifactId>mini-http-server</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>Mini HTTP Server - Networking Lab Part 2</name>
+  <description>
+    Sequential, single-threaded Java HTTP server that serves static resources
+    (HTML/JS/images) and a small set of hardcoded services, built for a
+    networking course laboratory. No concurrency, no frameworks.
+  </description>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.version>5.10.2</junit.version>
+    <!-- Main class, reused by maven-jar-plugin below -->
+    <exec.mainClass>com.lauragutierrez.lab6.http.MiniHttpServer</exec.mainClass>
+  </properties>
+
+  <dependencies>
+    <!-- Test-only dependency. The application itself has ZERO runtime
+         dependencies on purpose: it must run with nothing more than a JRE. -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>mini-http-server</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+      </plugin>
+      <plugin>
+        <!-- Produces a single runnable jar (no external runtime deps to
+             shade), so `java -jar mini-http-server.jar` works as-is. -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>${exec.mainClass}</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

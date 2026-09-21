@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 460" font-family="system-ui, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="980" height="460" fill="#f8fafc"/>
+
+  <!-- Browser -->
+  <rect x="30" y="40" width="220" height="130" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="140" y="65" text-anchor="middle" font-weight="700" font-size="15" fill="#0c4a6e">Browser</text>
+  <text x="140" y="90" text-anchor="middle" font-size="12" fill="#0c4a6e">index.html / app.js</text>
+  <text x="140" y="108" text-anchor="middle" font-size="12" fill="#0c4a6e">Async JS client (fetch)</text>
+  <text x="140" y="126" text-anchor="middle" font-size="12" fill="#0c4a6e">Forms: greet, square,</text>
+  <text x="140" y="142" text-anchor="middle" font-size="12" fill="#0c4a6e">server time + result/error areas</text>
+
+  <!-- Internet -->
+  <rect x="300" y="70" width="150" height="70" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="375" y="100" text-anchor="middle" font-weight="700" font-size="14" fill="#713f12">Internet</text>
+  <text x="375" y="120" text-anchor="middle" font-size="11" fill="#713f12">HTTP requests</text>
+
+  <!-- AWS boundary -->
+  <rect x="500" y="30" width="450" height="400" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="520" y="55" font-weight="700" font-size="14" fill="#334155">AWS · EC2 instance</text>
+
+  <!-- Security group -->
+  <rect x="520" y="70" width="410" height="330" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="540" y="95" font-weight="700" font-size="13" fill="#334155">Security group (firewall)</text>
+  <text x="540" y="112" font-size="11" fill="#475569">Inbound: 22/tcp from admin IP only</text>
+  <text x="540" y="127" font-size="11" fill="#475569">Inbound: app port (8080/tcp) from allowed clients</text>
+
+  <!-- Java sequential server -->
+  <rect x="545" y="150" width="360" height="90" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="725" y="172" text-anchor="middle" font-weight="700" font-size="14" fill="#14532d">MiniHttpServer (Java)</text>
+  <text x="725" y="192" text-anchor="middle" font-size="12" fill="#14532d">One ServerSocket, sequential accept() loop</text>
+  <text x="725" y="209" text-anchor="middle" font-size="12" fill="#14532d">One connection handled fully before the next</text>
+  <text x="725" y="226" text-anchor="middle" font-size="11" fill="#166534">systemd service · runs after logout</text>
+
+  <!-- Static resources -->
+  <rect x="545" y="265" width="165" height="115" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="627" y="288" text-anchor="middle" font-weight="700" font-size="13" fill="#4c1d95">Static resources</text>
+  <text x="627" y="308" text-anchor="middle" font-size="11" fill="#4c1d95">index.html</text>
+  <text x="627" y="325" text-anchor="middle" font-size="11" fill="#4c1d95">app.js</text>
+  <text x="627" y="342" text-anchor="middle" font-size="11" fill="#4c1d95">images/*.png, *.jpg</text>
+  <text x="627" y="362" text-anchor="middle" font-size="10" fill="#5b21b6">path-traversal safe</text>
+
+  <!-- Hardcoded services -->
+  <rect x="735" y="265" width="170" height="115" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="820" y="288" text-anchor="middle" font-weight="700" font-size="13" fill="#7f1d1d">Hardcoded services</text>
+  <text x="820" y="308" text-anchor="middle" font-size="11" fill="#7f1d1d">/api/greet</text>
+  <text x="820" y="325" text-anchor="middle" font-size="11" fill="#7f1d1d">/api/square</text>
+  <text x="820" y="342" text-anchor="middle" font-size="11" fill="#7f1d1d">/api/time · /api/health</text>
+  <text x="820" y="362" text-anchor="middle" font-size="10" fill="#991b1b">explicit if/else, no framework</text>
+
+  <!-- Arrows -->
+  <line x1="250" y1="105" x2="298" y2="105" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="450" y1="105" x2="518" y2="150" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="518" y1="130" x2="450" y2="120" stroke="#334155" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+  <line x1="725" y1="240" x2="627" y2="263" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="725" y1="240" x2="820" y2="263" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="490" y="440" text-anchor="middle" font-size="12" fill="#475569">
+    One request at a time end-to-end: the browser can fire requests asynchronously, but the server still answers them one after another.
+  </text>
+</svg>

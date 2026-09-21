@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini HTTP Server - Networking Lab</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --ok: #22c55e;
+    --err: #f87171;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  header img { height: 48px; border-radius: 6px; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  section.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+  }
+  section.card h2 { margin-top: 0; font-size: 1.05rem; color: var(--accent); }
+  form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  input[type="text"], input[type="number"] {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.5rem 0.7rem;
+    background: #0b1220;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    color: #0b1220;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.6; cursor: progress; }
+  #result-area {
+    min-height: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: #0b1220;
+    border: 1px solid var(--border);
+    color: var(--ok);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  #error-area {
+    min-height: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: #2a1414;
+    border: 1px solid #7f1d1d;
+    color: var(--err);
+    display: none;
+    white-space: pre-wrap;
+  }
+  #error-area.visible { display: block; }
+  .gallery img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 2rem 1rem 3rem;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img src="/images/logo.png" alt="Lab logo">
+  <div>
+    <div style="font-weight:700;">Mini HTTP Server</div>
+    <div style="color:var(--muted); font-size:0.85rem;">Sequential Java server &middot; hardcoded services &middot; networking lab, part 2</div>
+  </div>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>Greeting service</h2>
+    <form id="greet-form">
+      <input type="text" id="greet-name" name="name" placeholder="Your name" autocomplete="off">
+      <button type="submit">Greet me</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Square service</h2>
+    <form id="square-form">
+      <input type="number" id="square-value" name="value" placeholder="A number" step="any">
+      <button type="submit">Square it</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Server time</h2>
+    <button id="time-button" type="button">Get server time</button>
+  </section>
+
+  <section class="card">
+    <h2>Result</h2>
+    <div id="result-area">No requests yet.</div>
+    <div id="error-area"></div>
+  </section>
+
+  <section class="card gallery">
+    <h2>Static image served by this server</h2>
+    <img src="/images/diagram.jpg" alt="Diagram served as JPEG by the Java server">
+  </section>
+
+</main>
+
+<footer>
+  This server processes one connection at a time. It intentionally has no threads, no thread pool, and no load balancer.
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
