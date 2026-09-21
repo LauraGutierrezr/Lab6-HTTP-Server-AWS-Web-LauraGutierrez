@@ -591,7 +591,6 @@ I include a screenshot of the application running through the public address of 
 
 <img width="1306" height="480" alt="Captura de pantalla" src="https://github.com/user-attachments/assets/bc85a0cd-013a-4c1a-9a22-2497e2ad6ff4" />
 
-<img width="674" height="407" alt="Caprut m" src="https://github.com/user-attachments/assets/cf85c9dc-742a-46f0-a850-0db651166691" />
 
 
 <img width="987" height="637" alt="  a m" src="https://github.com/user-attachments/assets/29bb464e-287a-4976-878b-269323d64a06" />
