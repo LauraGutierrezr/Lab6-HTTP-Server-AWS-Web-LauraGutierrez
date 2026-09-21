@@ -142,7 +142,6 @@ The page does not reload after making a request.
 │   │       └── public/
 │   │           ├── index.html
 │   │           ├── app.js
-│   │           └── images/
 │   └── test/
 │       └── java/com/lauragutierrez/lab6/
 ├── deploy/
@@ -586,6 +585,28 @@ I do not store passwords, private keys, credentials, private addresses, or AWS a
 ### EC2 Execution
 
 I include a screenshot of the application running through the public address of the EC2 instance.
+
+
+<img width="800" height="385" alt="11 55 39 p m" src="https://github.com/user-attachments/assets/05d2c6c2-c130-47ed-8e12-eb94d89c4483" />
+
+<img width="1306" height="480" alt="Captura de pantalla" src="https://github.com/user-attachments/assets/bc85a0cd-013a-4c1a-9a22-2497e2ad6ff4" />
+
+<img width="674" height="407" alt="Caprut m" src="https://github.com/user-attachments/assets/cf85c9dc-742a-46f0-a850-0db651166691" />
+
+
+<img width="987" height="637" alt="  a m" src="https://github.com/user-attachments/assets/29bb464e-287a-4976-878b-269323d64a06" />
+
+
+
+<img width="563" height="53" alt="Cap42 a m" src="https://github.com/user-attachments/assets/7c4a61cb-84bd-4eb2-8c1c-8467ea6ae51e" />
+
+
+<img width="1246" height="774" alt="Capla(s) 2 12 35 a m" src="https://github.com/user-attachments/assets/c91b2861-fa9e-4517-a0a4-3d004e327054" />
+
+<img width="865" height="779" alt="Capa la(s) 2 13 32 a m" src="https://github.com/user-attachments/assets/e1668c49-fa58-40a0-9e6b-0a047dc1090d" />
+
+
+
 
 ###
 
